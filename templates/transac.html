@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <style>
+        /* Styles for the home button */
+        #home-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        #home-btn {
+            margin: -10px; /* Add some space between buttons */
+            padding: 8px 18px; /* Add padding to buttons */
+            background-color: #4caf50; /* Green background */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Cursor style */
+        }
+    </style>
+</head>
+<body>
+    <!-- Home button -->
+    <button id="home-btn">Home</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- JavaScript to handle the home button click -->
+    <script>
+        // Event listener for home button
+        document.getElementById('home-btn').addEventListener('click', function() {
+            // Redirect to the home page or perform any other desired action
+            window.location.href = "{% url 'home' %}";
+        });
+    </script>
+</body>
+</html>

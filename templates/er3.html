@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Does Not Exist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .error-container {
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        p {
+            color: #777;
+        }
+
+        button[type="submit"], button[type="button"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Item couldn't be Removed</h1>
+        <p>The requested item does not exist.</p>
+        <a href="{% url 'home' %}"><button type="button">Home</button></a>
+    </div>
+</body>
+</html>
