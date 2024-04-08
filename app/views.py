@@ -93,7 +93,7 @@ def update_item(request):
             # If item exists, update its quantity by subtracting the provided quantity
             
             item.quantity = quantity
-            price = price
+            item.price = price
             item.save()
         except:
             return render(request, 'er2.html')
